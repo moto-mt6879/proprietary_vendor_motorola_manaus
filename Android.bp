@@ -6308,8 +6308,8 @@ cc_prebuilt_library_shared {
                 "libcameracustom.camera_calibration.core",
                 "mot_manaus_ov50a_mipi_raw_IdxMgr",
                 "mot_manaus_ov50a_mipi_raw_row_IdxMgr",
-                "mot_manaus_hi1336_mipi_raw_row_IdxMgr",
                 "mot_manaus_hi1336_mipi_raw_IdxMgr",
+                "mot_manaus_hi1336_mipi_raw_row_IdxMgr",
                 "mot_manaus_ov32b_mipi_raw_IdxMgr",
                 "mot_manaus_ov32b_mipi_raw_row_IdxMgr",
                 "mtk000_mipi_raw_IdxMgr",
@@ -6410,8 +6410,8 @@ cc_prebuilt_library_shared {
                 "libcameracustom.cfg_setting.core",
                 "mot_manaus_ov50a_mipi_raw_IdxMgr",
                 "mot_manaus_ov50a_mipi_raw_row_IdxMgr",
-                "mot_manaus_hi1336_mipi_raw_row_IdxMgr",
                 "mot_manaus_hi1336_mipi_raw_IdxMgr",
+                "mot_manaus_hi1336_mipi_raw_row_IdxMgr",
                 "mot_manaus_ov32b_mipi_raw_IdxMgr",
                 "mot_manaus_ov32b_mipi_raw_row_IdxMgr",
                 "mtk000_mipi_raw_IdxMgr",
@@ -12459,6 +12459,29 @@ cc_prebuilt_library_shared {
 }
 
 android_app_import {
+    name: "MotoSignatureApp",
+    owner: "motorola",
+    apk: "proprietary/system/app/MotoSignatureApp/MotoSignatureApp.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+}
+
+android_app_import {
+    name: "MotCamera3AI",
+    owner: "motorola",
+    apk: "proprietary/product/app/MotCamera3AI/MotCamera3AI.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+android_app_import {
     name: "MobileFeliCaClient",
     owner: "motorola",
     apk: "proprietary/product/priv-app/MobileFeliCaClient/MobileFeliCaClient.apk",
@@ -12469,6 +12492,55 @@ android_app_import {
     },
     privileged: true,
     product_specific: true,
+}
+
+android_app_import {
+    name: "MotCamera4",
+    owner: "motorola",
+    apk: "proprietary/product/priv-app/MotCamera4/MotCamera4.apk",
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    product_specific: true,
+}
+
+android_app_import {
+    name: "MotorolaSettingsProvider",
+    owner: "motorola",
+    apk: "proprietary/system_ext/priv-app/MotorolaSettingsProvider/MotorolaSettingsProvider.apk",
+    certificate: "platform",
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    system_ext_specific: true,
+}
+
+dex_import {
+    name: "com.motorola.motosignature",
+    owner: "motorola",
+    jars: [
+        "proprietary/system/framework/com.motorola.motosignature.jar",
+    ],
+}
+
+dex_import {
+    name: "moto-core_services",
+    owner: "motorola",
+    jars: [
+        "proprietary/system/framework/moto-core_services.jar",
+    ],
+}
+
+dex_import {
+    name: "moto-settings",
+    owner: "motorola",
+    jars: [
+        "proprietary/system/framework/moto-settings.jar",
+    ],
 }
 
 prebuilt_etc_xml {
@@ -12821,6 +12893,14 @@ cc_prebuilt_binary {
     },
     prefer: true,
     soc_specific: true,
+}
+
+sh_binary {
+    name: "motsettings",
+    owner: "motorola",
+    src: "proprietary/system_ext/bin/motsettings",
+    filename: "motsettings",
+    system_ext_specific: true,
 }
 
 install_symlink {

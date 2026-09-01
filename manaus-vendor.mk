@@ -9,6 +9,13 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/manaus/proprietary/product/etc/felica/common.cfg:$(TARGET_COPY_OUT_PRODUCT)/etc/felica/common.cfg \
     vendor/motorola/manaus/proprietary/product/etc/felica/mfm.cfg:$(TARGET_COPY_OUT_PRODUCT)/etc/felica/mfm.cfg \
     vendor/motorola/manaus/proprietary/product/etc/felica/mfs.cfg:$(TARGET_COPY_OUT_PRODUCT)/etc/felica/mfs.cfg \
+    vendor/motorola/manaus/proprietary/product/etc/permissions/com.motorola.moto-uirefresh.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.motorola.moto-uirefresh.xml \
+    vendor/motorola/manaus/proprietary/product/etc/permissions/deviceowner-configuration-com.motorola.camera3.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/deviceowner-configuration-com.motorola.camera3.xml \
+    vendor/motorola/manaus/proprietary/product/etc/permissions/privapp-permissions-com.motorola.camera3.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-com.motorola.camera3.xml \
+    vendor/motorola/manaus/proprietary/product/etc/sysconfig/hiddenapi-whitelist-com.motorola.camera3.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/hiddenapi-whitelist-com.motorola.camera3.xml \
+    vendor/motorola/manaus/proprietary/system/etc/permissions/com.motorola.motosignature.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.motorola.motosignature.xml \
+    vendor/motorola/manaus/proprietary/system/etc/permissions/moto-core_services.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/moto-core_services.xml \
+    vendor/motorola/manaus/proprietary/system/etc/permissions/moto-settings.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/moto-settings.xml \
     vendor/motorola/manaus/proprietary/vendor/app/mcRegistry/020f0000000000000000000000000000.drbin:$(TARGET_COPY_OUT_VENDOR)/app/mcRegistry/020f0000000000000000000000000000.drbin \
     vendor/motorola/manaus/proprietary/vendor/app/mcRegistry/020f0000000000000000000000000000.tlbin:$(TARGET_COPY_OUT_VENDOR)/app/mcRegistry/020f0000000000000000000000000000.tlbin \
     vendor/motorola/manaus/proprietary/vendor/app/mcRegistry/031c0000000000000000000000000000.drbin:$(TARGET_COPY_OUT_VENDOR)/app/mcRegistry/031c0000000000000000000000000000.drbin \
@@ -265,6 +272,10 @@ PRODUCT_COPY_FILES += \
     vendor/motorola/manaus/proprietary/vendor/etc/libnfc-nxp_220e.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp_220e.conf \
     vendor/motorola/manaus/proprietary/vendor/etc/libnfc-nxp_560.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp_560.conf \
     vendor/motorola/manaus/proprietary/vendor/etc/nfc_calibration.txt:$(TARGET_COPY_OUT_VENDOR)/etc/nfc_calibration.txt \
+    vendor/motorola/manaus/proprietary/vendor/etc/permissions/com.motorola.camera3.content.ai.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.motorola.camera3.content.ai.xml \
+    vendor/motorola/manaus/proprietary/vendor/etc/permissions/com.motorola.camera3.lens.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.motorola.camera3.lens.xml \
+    vendor/motorola/manaus/proprietary/vendor/etc/permissions/com.motorola.camera3.manaus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.motorola.camera3.manaus.xml \
+    vendor/motorola/manaus/proprietary/vendor/etc/permissions/com.motorola.camera3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.motorola.camera3.xml \
     vendor/motorola/manaus/proprietary/vendor/etc/sn100u_nfcon.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_nfcon.pnscr \
     vendor/motorola/manaus/proprietary/vendor/etc/sn100u_pnx_ese_cplc.pnscr:$(TARGET_COPY_OUT_VENDOR)/etc/sn100u_pnx_ese_cplc.pnscr \
     vendor/motorola/manaus/proprietary/vendor/etc/tetras/portrait_repair_composite.model:$(TARGET_COPY_OUT_VENDOR)/etc/tetras/portrait_repair_composite.model \
@@ -680,7 +691,14 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.camera.lomoeffect@1.0 \
     vendor.mediatek.hardware.camera.postproc@1.0 \
     vendor.mediatek.hardware.camera.security@1.0 \
+    MotoSignatureApp \
+    MotCamera3AI \
     MobileFeliCaClient \
+    MotCamera4 \
+    MotorolaSettingsProvider \
+    com.motorola.motosignature \
+    moto-core_services \
+    moto-settings \
     manifest_cameraprovider.xml \
     motorola.hardware.camera.imgtuner.aidl.xml \
     SN1X0__RF-On.txt \
@@ -694,7 +712,8 @@ PRODUCT_PACKAGES += \
     nxpnfcinfo \
     pnscr \
     pnscr_cal \
-    sns_mot_client
+    sns_mot_client \
+    motsettings
 
 PRODUCT_PACKAGES += \
     vendor_bin_crossbuild_DataSet_SQLiteModule_db_ae_ParameterDB_ae_db \
